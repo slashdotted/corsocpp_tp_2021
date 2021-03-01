@@ -3,6 +3,7 @@
 #include <string>
 
 void strings_run() {
+  std::string messaggio{"Ciao mondo"};
   std::string msg;
   std::cout << "Stringa:" << msg << '\n';
   msg = "Ciao mondo";
