@@ -1,0 +1,1 @@
+void structenum_run();
