@@ -1,4 +1,5 @@
 #include "esempio_struct.h"
+#include "raii.h"
 #include <iostream>
 
 void stampa(const Frazione &f) { f.scrivi(); }
@@ -34,10 +35,4 @@ void foo(Frazione x) {}
 void bar(Tipo x) {}
 void baz(double d) {}
 
-int main() {
-  Frazione f;
-  Frazione g = f + 5; // f.operator+(5) -> f.operator+(Frazione{5});
-  Frazione h = Frazione{5} + f;
-  ++f;
-  f++;
-}
+int main() { raii_run(); }
