@@ -16,6 +16,9 @@ public:
 
   static int numero_istanze() { return istanze; }
 
+  // Operatore di conversione a double
+  operator double() { return (double)num / den; }
+
   Frazione &operator+=(const Frazione &f);
   Frazione &operator-=(const Frazione &f);
 
