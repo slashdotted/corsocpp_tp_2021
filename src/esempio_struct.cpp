@@ -27,3 +27,19 @@ void Frazione::numeratore(int valore) { num = valore; }
 
 // int Frazione::denominatore() const { return den; }
 // void Frazione::denominatore(int valore) { den = valore; }
+
+Frazione &Frazione::operator+=(const Frazione &f) {
+  int f_num{f.num * den};
+  den *= f.den;
+  num *= f.den;
+  num += f_num;
+  return *this;
+}
+
+Frazione &Frazione::operator-=(const Frazione &f) {
+  int f_num{f.num * den};
+  den *= f.den;
+  num *= f.den;
+  num -= f_num;
+  return *this;
+}

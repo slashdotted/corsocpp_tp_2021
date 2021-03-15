@@ -16,6 +16,9 @@ public:
 
   static int numero_istanze() { return istanze; }
 
+  Frazione &operator+=(const Frazione &f);
+  Frazione &operator-=(const Frazione &f);
+
 protected: // oppure private:
   int num, den;
   static int istanze;
