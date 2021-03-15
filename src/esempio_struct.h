@@ -17,10 +17,31 @@ public:
   static int numero_istanze() { return istanze; }
 
   // Operatore di conversione a double
-  operator double() { return (double)num / den; }
+  // operator double() { return (double)num / den; }
 
   Frazione &operator+=(const Frazione &f);
   Frazione &operator-=(const Frazione &f);
+
+  Frazione operator+(const Frazione &b) {
+    auto t{*this};
+    return t += b;
+  }
+
+  Frazione &operator++() { return *this += 1; }
+
+  Frazione &operator--() { return *this -= 1; }
+
+  Frazione operator++(int) {
+    auto f{*this};
+    *this += 1;
+    return f;
+  }
+
+  Frazione operator--(int) {
+    auto f{*this};
+    *this -= 1;
+    return f;
+  }
 
 protected: // oppure private:
   int num, den;

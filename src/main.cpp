@@ -14,10 +14,10 @@ std::ostream &operator<<(std::ostream &o, const Frazione &f) {
 }
 
 // Copia esplicita
-Frazione operator+(const Frazione &a, const Frazione &b) {
+/*Frazione operator+(const Frazione &a, const Frazione &b) {
   auto t{a};
   return t += b;
-}
+}*/
 
 // Copia implicita (passaggio per valore) <-- preferibile
 Frazione operator-(Frazione a, const Frazione &b) { return a -= b; }
@@ -36,10 +36,8 @@ void baz(double d) {}
 
 int main() {
   Frazione f;
-  f = 13;        // conversione automatica da int a Frazione
-  foo(3.1);      // conversione automatica da double->int a Frazione
-  bar(Tipo{52}); // conversione esplicita da int a Tipo (costruttore explicit)
-  baz(f);        // conversione tramite operatore di conversione a double
-  std::cout << f << '\n';
-  return 0;
+  Frazione g = f + 5; // f.operator+(5) -> f.operator+(Frazione{5});
+  Frazione h = Frazione{5} + f;
+  ++f;
+  f++;
 }
