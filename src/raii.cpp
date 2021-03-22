@@ -34,6 +34,8 @@ struct B {
     delete a; // RAII Resource Acquisition Is Initialization (dealloco nel
               // distruttore)
   }
+
+private:
   A *a;
   std::string nome;
 };
