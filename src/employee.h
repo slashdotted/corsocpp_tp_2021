@@ -1,16 +1,19 @@
+#include "abstractemployee.h"
 #include <string>
-
-class Employee {
+#ifndef EMPLOYEE
+#define EMPLOYEE
+class Employee : public AbstractEmployee {
 public:
   Employee(const std::string &name, const std::string &institute, int nr);
   ~Employee();
-  const std::string &name() const;
+  const std::string &name() const override;
   const std::string &institute() const;
   int employeenr() const;
-  std::string classname() const;
+  virtual std::string classname() const;
 
 protected:
   std::string m_name;
   std::string m_institute;
   int m_employeenr;
 };
+#endif // EMPLOYEE

@@ -3,7 +3,7 @@
 
 Researcher::Researcher(const std::string &name, const std::string &institute,
                        int nr, const std::string &researcharea)
-    : m_researcharea{researcharea} {
+    : Employee{name, institute, nr}, m_researcharea{researcharea} {
   std::cout << "Costructing Researcher" << std::endl;
 }
 
@@ -11,4 +11,6 @@ Researcher::~Researcher() { std::cout << "Destroying Researcher" << std::endl; }
 
 const std::string &Researcher::researcharea() const { return m_researcharea; }
 
-std::string Researcher::classname() const { return "Researcher"; }
+std::string Researcher::classname() const {
+  return Employee::classname() + "Researcher";
+}
