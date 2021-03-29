@@ -1,0 +1,1 @@
+void polymorphic_run();
