@@ -1,8 +1,10 @@
 #include <string>
+#include "lecturer.h"
+#include "researcher.h"
 #ifndef LECTURERRESEARCHER
 #define LECTURERRESEARCHER
 
-class LecturerResearcher {
+class LecturerResearcher : public Lecturer, public Researcher  {
 public:
     LecturerResearcher(const std::string& name,
                     const std::string& institute,

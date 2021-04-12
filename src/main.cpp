@@ -1,21 +1,21 @@
-#include "employee.h"
-#include "lecturer.h"
-#include "researcher.h"
+#include "lecturerresearcher.h"
 #include <iostream>
+#include "casts.h"
 
 using std::cout;
 
 int main() {
-  Employee e{"Enea", "ISEA", 6523};
-  Researcher r{"Riccardo", "ISIN", 1234, "DS"};
-  Lecturer l{"Luca", "ISIN", 4453, "CS", "3D"};
+  /*LecturerResearcher x{"Mister X", "ISIN", 7,
+  "CS", "C++", "Top Secret", 0.5};
 
-  cout << e.name() << ',' << e.classname() << '\n';
-  cout << r.name() << ',' << r.classname() << '\n';
-  cout << l.name() << ',' << l.classname() << '\n';
-  cout << "---------------------------------------------\n";
-  Employee *pr{&r};
-  Employee &rl{l};
-  cout << pr->name() << ',' << pr->classname() << '\n';
-  cout << rl.name() << ',' << rl.classname() << '\n';
+  cout << x.researchpercentage() << '\n';
+  cout << x.course() << '\n';
+  cout << x.researcharea() << '\n';
+  cout << x.name() << '\n';
+  x.Lecturer::name("Foo");
+  cout << x.name() << '\n';
+  cout << x.Lecturer::name() << '\n';
+  cout << x.Researcher::name() << '\n';*/
+  casts_run();
+
 }

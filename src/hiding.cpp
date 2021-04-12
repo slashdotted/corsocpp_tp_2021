@@ -5,14 +5,20 @@ using namespace std;
 
 class Base {
 public:
-  virtual void f(double x) { cout << "Base::f(double x)" << endl; }
+  virtual void f(int x) { 
+    cout << "Base::f(double x)" << endl; 
+  }
 };
 
 class Derived : public Base {
 public:
+  using Base::f;
+
   // This is not an override of Base::f (-> different signature)
   // and it's not an overload (-> different scope)
-  void f(int x) { cout << "Derived::f(int x)" << endl; }
+  void f(int x) { 
+    cout << "Derived::f(int x)" << endl;
+  }  
 };
 
 void hiding_run() {

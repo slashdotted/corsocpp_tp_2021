@@ -3,7 +3,7 @@
 #ifndef LECTURER
 #define LECTURER
 
-class Lecturer : public Employee {
+class Lecturer : public virtual Employee {
 public:
   Lecturer(const std::string &name, const std::string &institute, int nr,
            const std::string &studies, const std::string &course);

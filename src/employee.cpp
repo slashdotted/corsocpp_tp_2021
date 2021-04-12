@@ -15,3 +15,7 @@ const std::string &Employee::institute() const { return m_institute; }
 int Employee::employeenr() const { return m_employeenr; }
 
 std::string Employee::classname() const { return "Employee"; }
+
+ void Employee::name(const std::string& v) {
+   m_name = v;
+ }

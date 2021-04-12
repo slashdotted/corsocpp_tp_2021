@@ -14,6 +14,7 @@ void static_cast_example() {
   Employee &rc = static_cast<Employee &>(d); // beware of virtual inheritance!!!
   Employee *pc;
   pc = static_cast<Employee *>(&d); // Ok
+  // auto rd = static_cast<Lecturer*>(pc); // Non posso attraversare verso il basso la derivazione virtual
 
   // Errors / Limitations of static_cast
   Researcher *pr;
@@ -56,7 +57,10 @@ void dynamic_cast_example() {
   LecturerResearcher *pdr;
   pr = dynamic_cast<Researcher *>(pc);          // Returns nullptr!
   pdr = dynamic_cast<LecturerResearcher *>(&d); // Returns nullptr!
-  std::cout << pdr << std::endl;                // 0
+  std::cout << pr << ", " << pdr << std::endl; 
+  
+  auto rpr = dynamic_cast<Researcher&>(d);          // throws
+  auto rpdr = dynamic_cast<LecturerResearcher&>(d);   // throws       
 }
 
 bool instanceofLecturer(Employee *p) {
@@ -102,9 +106,9 @@ void const_cast_example() {
 }
 
 void casts_run() {
-    static_cast_example();
-    enum_class_cast();
+    //static_cast_example();
+    //enum_class_cast();
     dynamic_cast_example();
-    reinterpret_cast_example();
-    const_cast_example();
+    //reinterpret_cast_example();
+    //const_cast_example();
 }

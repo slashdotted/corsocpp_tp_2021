@@ -2,7 +2,7 @@
 #include <string>
 #ifndef RESEARCHER
 #define RESEARCHER
-class Researcher : public Employee {
+class Researcher : public virtual Employee {
 public:
   Researcher(const std::string &name, const std::string &institute, int nr,
              const std::string &researcharea);

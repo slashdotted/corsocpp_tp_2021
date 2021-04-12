@@ -10,7 +10,7 @@ public:
 class Derived : public Base {
 public:
   // overriding f from Base (same signature!)
-  void f(double x) { cout << "Derived::f(double x)" << endl; }
+  void f(double x) override { cout << "Derived::f(double x)" << endl; }
 };
 
 void overriding_run() {
