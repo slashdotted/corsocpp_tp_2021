@@ -1,21 +1,15 @@
-#include "lecturerresearcher.h"
 #include <iostream>
-#include "casts.h"
+#include "mylist.h"
 
 using std::cout;
 
 int main() {
-  /*LecturerResearcher x{"Mister X", "ISIN", 7,
-  "CS", "C++", "Top Secret", 0.5};
-
-  cout << x.researchpercentage() << '\n';
-  cout << x.course() << '\n';
-  cout << x.researcharea() << '\n';
-  cout << x.name() << '\n';
-  x.Lecturer::name("Foo");
-  cout << x.name() << '\n';
-  cout << x.Lecturer::name() << '\n';
-  cout << x.Researcher::name() << '\n';*/
-  casts_run();
+  MyList ml{10};
+  for (const auto& i : {0,1,2,3,4,5,6,7,8,9}) {
+    ml[i] = i;
+  }
+  for (const auto& i : {0,1,2,3,4,5,6,7,8,9}) {
+    cout << ml[i] << '\n';
+  }
 
 }
