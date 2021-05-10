@@ -2,6 +2,8 @@
 #include "mylist.h"
 #include <typeinfo>
 #include <functional>
+#include <vector>
+#include <algorithm>
 
 using std::cout;
 
@@ -86,6 +88,27 @@ int main() {
   auto l{gen_lambda(s_d3)};
 
   cout << l(5,3) << '\n';
+
+  std::vector<int> vec{1,2,3,4,5,6};
+
+  for(const auto& v : vec) {
+    cout << v << '\n';
+  }
+
+  std::for_each(vec.begin(), vec.end(), [] (const auto& v) {
+    cout << v << '\n';
+  });
+
+  std::for_each(vec.begin()+1, vec.begin()+3, [] (const auto& v) {
+    cout << v << '\n';
+  });
+
+  std::for_each(vec.rbegin(), vec.rend(), [] (const auto& v) {
+    cout << v << '\n';
+  });
+
+  
+
 
 
 
