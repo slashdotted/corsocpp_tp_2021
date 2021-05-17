@@ -1,9 +1,9 @@
 #include <iostream>
-#include "move.h"
+#include "privateimpl.h"
 
 using std::cout;
 
 int main()
 {
-    move_run();
+    cout << sizeof(MyDataType) << '\n';
 }

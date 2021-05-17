@@ -1,17 +1,23 @@
 #ifndef PRIVATEIMPL_H
 #define PRIVATEIMPL_H
-
-#include <string>
-#include <map>
+#include <memory>
 
 struct MyDataType
 {
-    void process();
+    MyDataType();
+    virtual ~MyDataType() noexcept;
+
+    MyDataType(const MyDataType&) = delete;
+    MyDataType& operator=(const MyDataType&) = delete;
+
     void clear();
 
 private:
-    std::map<std::string,std::string> m_container;
-    std::string m_tag;
+    //void process();
+    //void foo();
+    struct pimpl;
+    //pimpl* m_pimpl;
+    std::unique_ptr<pimpl> m_pimpl;
 };
 
 #endif // PRIVATEIMPL_H
