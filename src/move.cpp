@@ -8,11 +8,19 @@ using namespace std;
 struct Data {
     Data()
     {
-        cout << "New data" << endl;
+        cout << "Data::Data()" << endl;
+    }
+    Data(const Data& o)
+    {
+        cout << "Data::Data(const Data&)" << endl;
+    }
+    Data& operator=(const Data& o)
+    {
+        cout << "Data::operator=(const Data&)" << endl;
     }
     ~Data()
     {
-        cout << "Destroying data" << endl;
+        cout << "Data::~Data()" << endl;
     }
 };
 
