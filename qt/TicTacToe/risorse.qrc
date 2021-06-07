@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/immagini">
+        <file>esci.png</file>
+        <file>nuova.png</file>
+        <file>o.png</file>
+        <file>x.png</file>
+    </qresource>
+</RCC>
